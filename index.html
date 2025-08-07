@@ -31,7 +31,7 @@
     </div>
     
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <span class="hextech-logo">
@@ -40,7 +40,7 @@
                     <span class="logo-pulse"></span>
                 </span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 <span class="navbar-toggler-text">MENU</span>
             </button>
@@ -59,27 +59,21 @@
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                             <li><a class="dropdown-item" href="#services">All Services</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#services">Web Development</a></li>
-                            <li><a class="dropdown-item" href="#services">UI/UX Design</a></li>
+                            <li><a class="dropdown-item" href="#web-dev">Web Development</a></li>
+                            <li><a class="dropdown-item" href="#ui-ux">UI/UX Design</a></li>
                             <li><a class="dropdown-item" href="#graphic-design">Graphic Design</a></li>
-                            <li><a class="dropdown-item" href="#services">Project Management</a></li>
-                            <li><a class="dropdown-item" href="#services">Coding Classes</a></li>
-                            <li><a class="dropdown-item" href="#services">Digital Architecture</a></li>
-                            <li><a class="dropdown-item" href="#services">Freelance Solutions</a></li>
                             <li><a class="dropdown-item" href="#video-editing">Video Editing</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#management">Management</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#classes">Classes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#uiux">UI/UX</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="#projects">Projects</a></li>
+                            <li><a class="dropdown-item" href="#management">Management</a></li>
+                            <li><a class="dropdown-item" href="#classes">Classes</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -88,7 +82,7 @@
             </div>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
