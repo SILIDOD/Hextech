@@ -23,7 +23,10 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--dark);
@@ -270,6 +273,8 @@
 
         /* Enhanced Mobile Navigation */
         .navbar-toggler {
+                /* position: relative;
+    left: -68px; */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1540,7 +1545,7 @@
                 height: 50px;
                 font-size: 1.2rem;
                 bottom: 20px;
-                right: 20px;
+                right: 73px;
             }
             
             .theme-toggle {
