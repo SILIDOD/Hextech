@@ -320,6 +320,42 @@
               }
           });
       });
+
+      // Mobile dropdown menu handling
+      document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+          toggle.addEventListener('click', function(e) {
+              if (window.innerWidth < 992) {
+                  e.preventDefault();
+                  const menu = this.nextElementSibling;
+                  const isOpen = menu.classList.contains('show');
+                  
+                  // Close all other open dropdowns
+                  document.querySelectorAll('.dropdown-menu').forEach(m => {
+                      if (m !== menu) {
+                          m.classList.remove('show');
+                      }
+                  });
+                  
+                  // Toggle this one
+                  if (!isOpen) {
+                      menu.classList.add('show');
+                  } else {
+                      menu.classList.remove('show');
+                  }
+              }
+          });
+      });
+
+      // Close dropdowns when clicking outside on mobile
+      document.addEventListener('click', function(e) {
+          if (window.innerWidth < 992) {
+              if (!e.target.matches('.dropdown-toggle') && !e.target.closest('.dropdown-menu')) {
+                  document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                      menu.classList.remove('show');
+                  });
+              }
+          }
+      });
   });
 
   // AI Chat Functionality
