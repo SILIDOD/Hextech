@@ -1628,3 +1628,14 @@
                 display: none;
             }
         }
+        .btn-chatbox{
+            padding: 20px;
+            background-color: #ff00e4;
+            color: #ffffff;
+            border-radius: 5px;
+        }
+        .btn-chatbox:hover{
+            background-color: #6a00f4;
+            border-radius: 5px;
+        }
+        
