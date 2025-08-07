@@ -395,6 +395,32 @@
             transform: translateX(5px);
         }
 
+
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                max-height: 80vh;
+                overflow-y: auto;
+                padding: 15px;
+                background: rgba(10, 10, 20, 0.98);
+                margin-top: 10px;
+                border-radius: 10px;
+                border: 1px solid var(--primary);
+            }
+            
+            .nav-item {
+                margin: 5px 0;
+            }
+            
+            .nav-link {
+                padding: 10px 15px;
+                border-radius: 5px;
+            }
+            
+            .dropdown-menu {
+                margin-top: 5px;
+            }
+        }
+        
         /* Hero Section */
         .hero {
             min-height: 100vh;
