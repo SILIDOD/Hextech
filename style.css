@@ -122,7 +122,7 @@
             transform-origin: top right;
         }
 
-        .robot-arm.right {
+        .robot-arm.righ {
             right: -10px;
             transform-origin: top left;
         }
@@ -141,7 +141,7 @@
             animation: walk-left 1s infinite;
         }
 
-        .robot-leg.right {
+        .robot-leg.righ {
             right: 15px;
             animation: walk-right 1s infinite;
         }
@@ -575,6 +575,78 @@
             animation: pulse 2s infinite;
         }
 
+
+
+        .btn-pulse {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 12px 30px;
+            margin-top: 50px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+    
+        .btn-pulse:hover {
+            color: var(--light);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 247, 255, 0.4);
+        }
+    
+        [data-theme="light"] .btn-pulse:hover {
+            box-shadow: 0 5px 15px rgba(106, 0, 244, 0.4);
+        }
+    
+        .btn-pulse::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+    
+        .btn-pulse:hover::before {
+            left: 100%;
+        }
+    
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 247, 255, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 247, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 247, 255, 0);
+            }
+        }
+    
+        [data-theme="light"] .btn-pulse {
+            animation-name: pulse-light;
+        }
+    
+        @keyframes pulse-light {
+            0% {
+                box-shadow: 0 0 0 0 rgba(106, 0, 244, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(106, 0, 244, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(106, 0, 244, 0);
+            }
+        }
         /* Sections */
         section {
             padding: 100px 0;
@@ -810,6 +882,7 @@
             position: relative;
             transition: var(--transition);
             border: 1px solid rgba(0, 247, 255, 0.1);
+            height: 300px;
         }
 
         [data-theme="light"] .project-card {
@@ -950,7 +1023,7 @@
         }
 
         .right {
-            left: 50%;
+            left: 0%;
         }
 
         .left::before {
@@ -1401,7 +1474,7 @@
             }
             
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 0.6rem;
             }
             
             .cube-container {
@@ -1638,4 +1711,100 @@
             background-color: #6a00f4;
             border-radius: 5px;
         }
-        
+
+        .btn-subscribe {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-left: none;
+            padding: 0 20px; /* Adjusted padding */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            white-space: nowrap;
+            height: 100%; /* Make button full height */
+            display: flex;
+            align-items: center; /* Center text vertically */
+        }
+    
+    /* Custom input group */
+    .newsletter-group {
+        height: 46px;
+        align-items: center;
+    }
+    
+    /* Input styling */
+    .newsletter-input {
+        height: 100%;
+        border: 2px solid var(--primary);
+        border-right: none;
+        border-radius: 30px 0 0 30px;
+        padding: 0 20px;
+    }
+    
+    /* Button styling */
+    
+ 
+    /* Container for perfect alignment */
+    .newsletter-container {
+        display: flex;
+        height: 46px;
+        width: 100%;
+    }
+    
+    /* Input field styling */
+    .newsletter-input {
+        width: 92px;
+        flex-grow: 1;
+        height: 100%;
+        border: 2px solid var(--primary);
+        border-right: none;
+        border-radius: 30px 0 0 30px;
+        padding: 0 20px;
+        margin: 0;
+        outline: none;
+        font-size: 14px;
+    }
+    
+    /* Button styling */
+    .btn-subscribe.newsletter-btn {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+        border-left: none;
+        height: 100%;
+        padding: 0 25px;
+        border-radius: 0 30px 30px 0;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        margin: 0;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .btn-subscribe:hover {
+        color: var(--light);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 247, 255, 0.4);
+    }
+
+    [data-theme="light"] .btn-subscribe:hover {
+        box-shadow: 0 5px 15px rgba(106, 0, 244, 0.4);
+    }
+    
+    /* Fix for any potential misalignment */
+    .newsletter-input,
+    .newsletter-btn {
+        box-sizing: border-box;
+        vertical-align: top;
+    }
