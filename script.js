@@ -66,23 +66,29 @@
   });
   
   // Typewriter Effect
-  const typewriterText = "Code. Design. Manage. Teach. Innovate.";
-  const typewriterElement = document.querySelector('.typewriter');
-  let i = 0;
-  
-  function typeWriter() {
-      if (i < typewriterText.length) {
-          typewriterElement.textContent += typewriterText.charAt(i);
-          i++;
-          setTimeout(typeWriter, 100);
-      } else {
-          setTimeout(() => {
-              typewriterElement.textContent = '';
-              i = 0;
-              typeWriter();
-          }, 2000);
-      }
-  }
+  document.addEventListener('DOMContentLoaded', () => {
+    const typewriterText = "Code. Design. Manage. Teach. Innovate.";
+    const typewriterElement = document.querySelector('.typewriter');
+    let i = 0;
+    
+    function typeWriter() {
+        if (i < typewriterText.length) {
+            typewriterElement.textContent += typewriterText.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        } else {
+            setTimeout(() => {
+                typewriterElement.textContent = '';
+                i = 0;
+                typeWriter();
+            }, 2000);
+        }
+    }
+    
+    // Clear element and start
+    typewriterElement.textContent = '';
+    typeWriter();
+});
   
   // Start the typewriter effect
   setTimeout(typeWriter, 1000);
