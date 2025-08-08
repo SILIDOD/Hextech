@@ -122,7 +122,7 @@
             transform-origin: top right;
         }
 
-        .robot-arm.righ {
+        .robot-arm.right {
             right: -10px;
             transform-origin: top left;
         }
@@ -141,7 +141,7 @@
             animation: walk-left 1s infinite;
         }
 
-        .robot-leg.righ {
+        .robot-leg.right {
             right: 15px;
             animation: walk-right 1s infinite;
         }
@@ -1023,7 +1023,7 @@
         }
 
         .right {
-            left: 0%;
+            left: 50%;
         }
 
         .left::before {
