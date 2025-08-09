@@ -1,3 +1,51 @@
+         // Set minimum load time to 5 seconds (5000ms)
+         const MIN_LOAD_TIME = 3000;
+         const startTime = Date.now();
+         
+         // Progress elements
+         const progressElement = document.getElementById('progres');
+         const loader = document.getElementById('loader');
+         const content = document.getElementById('content');
+         
+         // Simulate progress (slower movement)
+         let progress = 0;
+         const progressInterval = setInterval(() => {
+             // Calculate elapsed time
+             const elapsed = Date.now() - startTime;
+             const progressPercent = Math.min(100, (elapsed / MIN_LOAD_TIME) * 100);
+             
+             // Update progress bar smoothly
+             progress = Math.min(progress + 2, progressPercent);
+             progressElement.style.width = progress + '%';
+             
+             // Complete when we reach both time and progress
+             if (elapsed >= MIN_LOAD_TIME && progress >= 100) {
+                 clearInterval(progressInterval);
+                 hideLoader();
+             }
+         }, 200);
+         
+         // Fallback if assets take longer than 5 seconds
+         window.addEventListener('load', function() {
+             const elapsed = Date.now() - startTime;
+             const remainingTime = Math.max(0, MIN_LOAD_TIME - elapsed);
+             
+             setTimeout(() => {
+                 progressElement.style.width = '100%';
+                 hideLoader();
+             }, remainingTime);
+         });
+         
+         function hideLoader() {
+             loader.style.opacity = '0';
+             setTimeout(() => {
+                 loader.style.display = 'none';
+                 content.style.display = 'block';
+             }, 500); // Match with CSS transition time
+         }
+  
+  
+  
   // Theme Toggle
   const themeToggle = document.querySelector('.theme-toggle');
   const body = document.body;
@@ -443,3 +491,7 @@
           sendMessage();
       }
   });
+
+
+
+  
