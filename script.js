@@ -494,4 +494,45 @@
 
 
 
-  
+  // Contact form handling
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    
+    // Show loading state
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+    
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            // Success
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+            submitBtn.classList.add('btn-success');
+            form.reset();
+        } else {
+            // Error
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        submitBtn.innerHTML = '<i class="fas fa-times"></i> Error';
+        submitBtn.classList.add('btn-danger');
+    } finally {
+        // Reset button after 3 seconds
+        setTimeout(() => {
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('btn-success', 'btn-danger');
+        }, 3000);
+    }
+});
