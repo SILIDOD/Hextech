@@ -1096,6 +1096,9 @@
         }
 
         /* Classes Section */
+
+
+        
         .timeline {
             position: relative;
             max-width: 1200px;
@@ -1139,7 +1142,7 @@
         }
 
         .right {
-            left: 50%;
+            /* left: 50%; */
         }
 
         .left::before {
@@ -1717,6 +1720,12 @@
             }
         }
 
+     @media (min-width: 575.98px) {
+
+        .rights.visible {
+    transform: translateX(100%);
+}
+     }
         /* Small Mobile Adjustments */
         @media (max-width: 575.98px) {
             .hero-title {
@@ -1776,6 +1785,8 @@
             }
         }
 
+
+        
         /* Navigation Specific Fixes */
         @media (max-width: 991.98px) {
             .navbar-collapse {
@@ -1816,6 +1827,8 @@
             .robot-character {
                 display: none;
             }
+
+            
         }
         .btn-chatbox{
             padding: 20px;
